@@ -15,8 +15,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
     - [Autenticación](#autenticación)
     - [Clientes](#clientes)
     - [Mascotas](#mascotas)
-7. [Pruebas en Thunder Client o Postman](#pruebas-en-thunder-client-o-postman)
-8. [Despliegue en Vercel](#despliegue-en-vercel)
+7. [Despliegue en Vercel](#despliegue-en-vercel)
 
 ---
 
@@ -319,3 +318,10 @@ JWT_SECRET=tu-clave-secreta
   "message": "Mascota eliminada exitosamente."
   }
   ```
+## 🌐 Despliegue en Vercel <a id="despliegue-en-vercel"></a>
+
+La API está desplegada en **Vercel** y puede ser accedida a través del siguiente enlace:
+
+[🌍 Ir a la API en Producción](https://integrador-back-end-pichichos-bbqi36z3n.vercel.app/)
+
+Este despliegue utiliza **MongoDB Atlas** como base de datos en la nube, garantizando escalabilidad y rendimiento.
