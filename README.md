@@ -42,14 +42,14 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## 🛡️ Seguridad
+## **Seguridad**
 - **Autenticación:** Basada en **JWT**. El token debe enviarse en los **headers** como:
   ```http
   Authorization: Bearer <token>
   ```
 ---
 
-## 🚀 **Instalación**
+## **Instalación**
 
 1. **Clona el repositorio**:
     ```bash
