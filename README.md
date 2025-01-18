@@ -20,7 +20,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## 🚀 Características <a id="Características"></a>
+## 🚀 Características <a id="características"></a>
 
 - CRUD para **Clientes** y **Mascotas**.
 - Relación entre clientes y sus mascotas.
@@ -31,7 +31,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## **Tecnologías Utilizadas**
+## 🛠️ Tecnologías Utilizadas <a id="tecnologías-utilizadas"></a>
 
 - **Node.js**
 - **Express.js**
@@ -42,7 +42,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## **Seguridad**
+## 🔒 Seguridad <a id="seguridad"></a>
 - **Autenticación:** Basada en **JWT**. El token debe enviarse en los **headers** como:
   ```http
   Authorization: Bearer <token>
@@ -70,7 +70,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## **Variables de Entorno**
+## 🔐 Variables de Entorno <a id="variables-de-entorno"></a>
 
 Debes crear un archivo `.env` con las siguientes variables:
 
@@ -81,7 +81,7 @@ JWT_SECRET=tu-clave-secreta
 
 ```
 
-## **Endpoints Disponibles**
+## 🔗 Endpoints Disponibles <a id="endpoints-disponibles"></a>
 
 ### **Autenticación**
 
