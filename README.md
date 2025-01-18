@@ -325,3 +325,14 @@ La API está desplegada en **Vercel** y puede ser accedida a través del siguien
 [🌍 Ir a la API en Producción](https://integrador-back-end-pichichos-bbqi36z3n.vercel.app/)
 
 Este despliegue utiliza **MongoDB Atlas** como base de datos en la nube, garantizando escalabilidad y rendimiento.
+
+---
+
+## 🚧 **¡Estamos Trabajando en la Próxima Etapa!**
+
+![Obreros trabajando - Próximamente](https://cdn.pixabay.com/animation/2024/05/16/21/44/21-44-44-5_512.gif)
+
+La base del proyecto ya está lista y actualmente estamos desarrollando una interfaz visual para que puedas interactuar de manera más fácil y cómoda con la plataforma. ¡Muy pronto estará disponible! 🎉
+
+Gracias por tu paciencia y apoyo mientras seguimos construyendo esta experiencia para ti. 💪
+
