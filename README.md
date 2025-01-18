@@ -8,14 +8,15 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 1. [Características](#características)
 2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
-3. [Instalación](#instalación)
-4. [Variables de Entorno](#variables-de-entorno)
-5. [Endpoints Disponibles](#endpoints-disponibles)
+3. [Seguridad](#seguridad)
+4. [Instalación](#instalación)
+5. [Variables de Entorno](#variables-de-entorno)
+6. [Endpoints Disponibles](#endpoints-disponibles)
     - [Autenticación](#autenticación)
     - [Clientes](#clientes)
     - [Mascotas](#mascotas)
-6. [Pruebas en Thunder Client o Postman](#pruebas-en-thunder-client-o-postman)
-7. [Despliegue en Vercel](#despliegue-en-vercel)
+7. [Pruebas en Thunder Client o Postman](#pruebas-en-thunder-client-o-postman)
+8. [Despliegue en Vercel](#despliegue-en-vercel)
 
 ---
 
@@ -41,12 +42,17 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
+## 🛡️ Seguridad
+- **Autenticación:** Basada en **JWT**. El token debe enviarse en los **headers** como:
+  ```http
+  Authorization: Bearer <token>
+
+
 ## 🚀 **Instalación**
 
 1. **Clona el repositorio**:
     ```bash
-    git clone https://github.com/tu-usuario/tu-repo.git
-    cd tu-repo
+    git clone https://github.com/tenok94/Integrador-BackEnd-Pichichos.git
     ```
 
 2. **Instala las dependencias**:
@@ -98,8 +104,8 @@ JWT_SECRET=tu-clave-secreta
 
     "message": "Usuario registrado exitosamente."
 
-    }```
-
+    }
+  ```
 
 #### **2. Inicio de Sesión**
 - **Método**: `POST`
@@ -312,4 +318,3 @@ JWT_SECRET=tu-clave-secreta
   "message": "Mascota eliminada exitosamente."
   }
   ```
-
