@@ -188,4 +188,128 @@ JWT_SECRET=tu-clave-secreta
   "message": "Cliente actualizado exitosamente."
   }
   ```
+#### **4. Eliminar Cliente**
+- **Método**: `DELETE`
+- **URL**: `/clientes/:id`
+- **Descripción**: Elimina un cliente.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  {
+  "message": "Cliente eliminado exitosamente."
+  }
+  ```
+### **🐾Mascotas**
+#### **1. Crear Mascota**
+- **Método**: `POST`
+- **URL**: `/mascotas`
+- **Descripción**: Registra una nueva mascota asociada a un cliente.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Body**:
+  ```json
+  {
+  "nombre": "Uma",
+  "especie": "Perro",
+  "edad": 5,
+  "clienteId": "<id-del-cliente>"
+  } 
+
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  {
+  "message": "Mascota creada exitosamente.",
+  "mascota": {
+              "_id": "6450d76e2eac1234a56789cd",
+              "nombre": "Uma",
+              "especie": "Perro",
+              "edad": 5,
+              "clienteId": "6450d76e2eac1234a56789ab"
+             }
+  }
+  ```
+#### **2. Listar Todas las Mascotas**
+- **Método**: `GET`
+- **URL**: `/mascotas`
+- **Descripción**: Obtiene una lista de todas las mascotas.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  [
+    {
+      "_id": "6450d76e2eac1234a56789cd",
+      "nombre": "Uma",
+      "especie": "Perro",
+      "edad": 5
+    }
+  ]
+  ```
+#### **3. Listar Mascotas por Cliente**
+- **Método**: `GET`
+- **URL**: `/mascotas/cliente/:clienteId`
+- **Descripción**: Obtiene las mascotas asociadas a un cliente.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  [
+    {
+      "_id": "6450d76e2eac1234a56789cd",
+      "nombre": "Uma",
+      "especie": "Perro",
+      "edad": 5,
+      "clienteId": "6450d76e2eac1234a56789ab"
+    }
+  ]
+  ```
+#### **4. Añadir Vacuna a una Mascota**
+- **Método**: `POST`
+- **URL**: `/mascotas/:id/vacunas`
+- **Descripción**: Registra una nueva vacuna para una mascota específica.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Body**:
+  ```json
+  {
+  "nombre": "Vacuna contra la rabia",
+  "fecha": "2025-01-14"
+  }
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  {
+  "message": "Vacuna añadida exitosamente.",
+  "vacuna": {
+              "nombre": "Vacuna contra la rabia",
+              "fecha": "2025-01-14"
+            }
+  }
+  ```
+#### **5. Eliminar Mascota**
+- **Método**: `DELETE`
+- **URL**: `/mascotas/:id`
+- **Descripción**: Elimina una mascota.
+- **Headers**:
+  ```json
+    Authorization: Bearer <token>
+  ```
+- **Respuesta Exitosa:**:
+  ```json
+  {
+  "message": "Mascota eliminada exitosamente."
+  }
+  ```
 
