@@ -20,7 +20,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## 🚀**Características** <a id="Características"></a>
+## 🚀 Características <a id="Características"></a>
 
 - CRUD para **Clientes** y **Mascotas**.
 - Relación entre clientes y sus mascotas.
