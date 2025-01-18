@@ -49,7 +49,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
   ```
 ---
 
-## **Instalación**
+## 🚀 Instalación <a id="instalación"></a>
 
 1. **Clona el repositorio**:
     ```bash
