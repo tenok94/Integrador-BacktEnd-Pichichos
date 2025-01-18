@@ -83,7 +83,7 @@ JWT_SECRET=tu-clave-secreta
 
 ## 🔗 Endpoints Disponibles <a id="endpoints-disponibles"></a>
 
-### **Autenticación**
+## 🔑 Autenticación <a id="autenticación"></a>
 
 #### **1. Registro de Usuario**
 - **Método**: `POST`
@@ -127,7 +127,7 @@ JWT_SECRET=tu-clave-secreta
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
     } 
     ```
-### **Clientes**
+## 🧑‍🤝‍🧑 Clientes <a id="clientes"></a>
 #### **1. Crear Cliente**
 - **Método**: `POST`
 - **URL**: `/auth/login`
@@ -209,7 +209,7 @@ JWT_SECRET=tu-clave-secreta
   "message": "Cliente eliminado exitosamente."
   }
   ```
-### **Mascotas**
+## 🐾 Mascotas <a id="mascotas"></a>
 #### **1. Crear Mascota**
 - **Método**: `POST`
 - **URL**: `/mascotas`
