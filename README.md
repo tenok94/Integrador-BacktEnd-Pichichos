@@ -6,7 +6,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ## **Tabla de Contenidos**
 
-1. [Características](#🚀características)
+1. [Características](#características)
 2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
 3. [Seguridad](#seguridad)
 4. [Instalación](#instalación)
@@ -20,7 +20,7 @@ API REST desarrollada con **Node.js**, **Express** y **MongoDB** para gestionar 
 
 ---
 
-## 🚀**Características**
+## 🚀**Características** <a id="Características"></a>
 
 - CRUD para **Clientes** y **Mascotas**.
 - Relación entre clientes y sus mascotas.
