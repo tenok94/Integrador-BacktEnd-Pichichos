@@ -81,7 +81,7 @@ JWT_SECRET=tu-clave-secreta
 
 ```
 
-##  **Endpoints**
+## **Endpoints Disponibles**
 
 ### **Autenticación**
 
