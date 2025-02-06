@@ -42,7 +42,7 @@ app.listen(PORT, () => {
 });
 
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://integrador-backt-end-pichichos.vercel.app'],
+    origin: ['https://integrador-front-end-pichichos-one.vercel.app', 'https://integrador-backt-end-pichichos.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 };
