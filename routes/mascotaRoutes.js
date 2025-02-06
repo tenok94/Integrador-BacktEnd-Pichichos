@@ -63,6 +63,27 @@ router.get('/:id/vacunas', authMiddleware, async (req, res) => {
     }
 });
 
+// Actualizar una mascota existente
+router.put('/:id', authMiddleware, async (req, res) => {
+    const { id } = req.params;
+    const { nombre, especie, raza, edad, cliente_id } = req.body;
+
+    try {
+        const mascotaActualizada = await Mascota.findByIdAndUpdate(
+            id,
+            { nombre, especie, raza, edad, cliente_id },
+            { new: true } // Esto devuelve la mascota actualizada
+        );
+
+        if (!mascotaActualizada) {
+            return res.status(404).json({ message: "Mascota no encontrada" });
+        }
+
+        res.json(mascotaActualizada);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
 
 
 module.exports = router;
