@@ -4,17 +4,15 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db'); // Importa la función para conectar MongoDB
 
-const statsRoutes = require("./routes/statsRoutes");
-app.use("/stats", statsRoutes);
-
-const turnosRoutes = require("./routes/turnosRoutes");
-app.use("/turnos", turnosRoutes);
-
-
 // Importar rutas
 const clienteRoutes = require('./routes/clienteRoutes');
 const mascotaRoutes = require('./routes/mascotaRoutes');
 const authRoutes = require('./routes/authRoutes'); // Rutas de autenticación
+const statsRoutes = require("./routes/statsRoutes");
+const turnosRoutes = require("./routes/turnosRoutes");
+
+app.use("/stats", statsRoutes);
+app.use("/turnos", turnosRoutes);
 
 // Configuración de variables de entorno
 dotenv.config(); // Cargar variables desde .env
