@@ -14,11 +14,6 @@ const authRoutes = require('./routes/authRoutes'); // Rutas de autenticación
 const statsRoutes = require("./routes/statsRoutes");
 const turnosRoutes = require("./routes/turnosRoutes");
 
-app.use("/stats", statsRoutes);
-app.use("/stats", require("./routes/statsRoutes"));
-
-app.use("/turnos", turnosRoutes);
-
 // Configuración de variables de entorno
 dotenv.config(); // Cargar variables desde .env
 
@@ -35,7 +30,10 @@ app.use(bodyParser.json());
 // Rutas
 app.use('/clientes', clienteRoutes);
 app.use('/mascotas', mascotaRoutes);
+app.use("/stats", statsRoutes);
+app.use("/turnos", turnosRoutes);
 app.use('/auth', authRoutes); // Usar rutas de autenticación
+
 
 // Puerto del servidor
 const PORT = process.env.PORT || 5000;
