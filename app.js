@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db'); // Importa la función para conectar MongoDB
 
-console.log("Stats route registered");
-console.log("Turnos route registered");
+// console.log("Stats route registered");
+// console.log("Turnos route registered");
 
 // Importar rutas
 const clienteRoutes = require('./routes/clienteRoutes');
