@@ -15,6 +15,8 @@ const statsRoutes = require("./routes/statsRoutes");
 const turnosRoutes = require("./routes/turnosRoutes");
 
 app.use("/stats", statsRoutes);
+app.use("/stats", require("./routes/statsRoutes"));
+
 app.use("/turnos", turnosRoutes);
 
 // Configuración de variables de entorno
