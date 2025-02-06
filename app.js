@@ -4,6 +4,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db'); // Importa la función para conectar MongoDB
 
+const statsRoutes = require("./routes/statsRoutes");
+app.use("/stats", statsRoutes);
+
+const turnosRoutes = require("./routes/turnosRoutes");
+app.use("/turnos", turnosRoutes);
+
 
 // Importar rutas
 const clienteRoutes = require('./routes/clienteRoutes');
