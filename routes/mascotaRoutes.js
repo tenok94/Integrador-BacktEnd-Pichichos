@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Mascota = require('../models/mascotas');
+const Mascota = require('../models/Mascotas');
 const authMiddleware = require('../middleware/authMiddleware'); // Middleware para proteger rutas
 
 // Crear una mascota vinculada a un cliente
@@ -15,19 +15,6 @@ router.post('/', authMiddleware, async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
-
-// // Filtrar mascotas por cliente
-// router.get('/', authMiddleware, async (req, res) => {
-//     const { cliente_id } = req.query;
-
-//     try {
-//         const mascotas = await Mascota.find({ cliente_id });
-//         res.json(mascotas);
-//     } catch (error) {
-//         res.status(500).json({ message: error.message });
-//     }
-// });
-// Obtener mascotas (todas o filtradas por cliente)
 
 router.get('/', authMiddleware, async (req, res) => {
     const { cliente_id } = req.query;
