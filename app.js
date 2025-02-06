@@ -40,3 +40,12 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
+// Configurar opciones CORS
+const corsOptions = {
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
