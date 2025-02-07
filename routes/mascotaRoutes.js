@@ -3,20 +3,6 @@ const router = express.Router();
 const Mascota = require('../models/mascotas');
 const authMiddleware = require('../middleware/authMiddleware'); // Middleware para proteger rutas
 
-// // Crear una mascota vinculada a un cliente
-// router.post('/', authMiddleware, async (req, res) => {
-//     const { nombre, especie, raza, edad, cliente_id } = req.body;
-
-//     try {
-//         const nuevaMascota = new Mascota({ nombre, especie, raza, edad, cliente_id });
-//         await nuevaMascota.save();
-//         res.status(201).json(nuevaMascota);
-//     } catch (error) {
-//         res.status(400).json({ message: error.message });
-//     }
-// });
-
-// Crear una mascota vinculada a un cliente
 router.post("/", authMiddleware, async (req, res) => {
     const { nombre, especie, raza, edad, cliente_id } = req.body;
 
