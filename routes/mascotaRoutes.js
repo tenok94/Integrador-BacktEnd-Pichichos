@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Mascota = require('../models/Mascotas');
+const Mascota = require('../models/mascotas');
 const authMiddleware = require('../middleware/authMiddleware'); // Middleware para proteger rutas
 
 // // Crear una mascota vinculada a un cliente

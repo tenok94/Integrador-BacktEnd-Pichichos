@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Turno = require("../models/Turno");
+const Turno = require("../models/turno");
 
 router.get("/", async (req, res) => {
   try {

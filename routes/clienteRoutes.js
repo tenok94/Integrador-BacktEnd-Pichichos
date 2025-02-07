@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Cliente = require('../models/Cliente');
+const Cliente = require('../models/cliente');
 const authMiddleware = require('../middleware/authMiddleware'); // Importar el middleware
 
 // Listar todos los clientes (protegido)
