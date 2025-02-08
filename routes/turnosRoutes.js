@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Turno = require("../models/Turno");
+const Turno = require("../models/turno");
 const authMiddleware = require("../middleware/authMiddleware");
 
 // Crear un turno
