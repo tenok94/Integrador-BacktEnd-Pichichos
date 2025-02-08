@@ -3,7 +3,17 @@ const router = express.Router();
 const Turno = require("../models/turno");
 const authMiddleware = require("../middleware/authMiddleware");
 
-// Listar todos los turnos
+// router.get("/", authMiddleware, async (req, res) => {
+//   try {
+//     const turnos = await Turno.find()
+//       .populate("mascota", "nombre especie")
+//       .populate("cliente", "nombre email");
+//     res.json(turnos);
+//   } catch (error) {
+//     res.status(500).json({ message: "Error al obtener turnos", error });
+//   }
+// });
+// Obtener todos los turnos con datos poblados
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const turnos = await Turno.find()
@@ -15,16 +25,44 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
-// Crear un turno
+
+// router.post("/", authMiddleware, async (req, res) => {
+//   const { mascota, cliente, fecha, notas } = req.body;
+
+//   if (!mascota || !cliente || !fecha) {
+//     return res.status(400).json({ message: "Faltan datos obligatorios." });
+//   }
+
+//   try {
+//     const nuevoTurno = new Turno({ mascota, cliente, fecha, notas });
+//     await nuevoTurno.save();
+//     res.status(201).json(nuevoTurno);
+//   } catch (error) {
+//     res.status(400).json({ message: "Error al crear turno", error });
+//   }
+// });
+// Crear un nuevo turno
 router.post("/", authMiddleware, async (req, res) => {
   const { mascota, cliente, fecha, notas } = req.body;
 
+  if (!mascota || !cliente || !fecha) {
+    return res.status(400).json({ message: "Faltan datos obligatorios." });
+  }
+
   try {
-    const nuevoTurno = new Turno({ mascota, cliente, fecha, notas });
+    const nuevoTurno = new Turno({ 
+      mascota, 
+      cliente, 
+      fecha, 
+      notas 
+    });
+
     await nuevoTurno.save();
-    res.status(201).json(nuevoTurno);
+    const turnoPoblado = await nuevoTurno.populate("mascota", "nombre").populate("cliente", "nombre");
+
+    res.status(201).json(turnoPoblado);
   } catch (error) {
-    res.status(400).json({ message: "Error al crear turno", error });
+    res.status(500).json({ message: "Error al crear turno", error });
   }
 });
 
