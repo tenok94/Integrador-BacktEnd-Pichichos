@@ -1,94 +1,41 @@
 const express = require("express");
 const router = express.Router();
-const Turno = require("../models/turno");
+const Turno = require("../models/Turno");
 const authMiddleware = require("../middleware/authMiddleware");
 
-// router.get("/", authMiddleware, async (req, res) => {
-//   try {
-//     const turnos = await Turno.find()
-//       .populate("mascota", "nombre especie")
-//       .populate("cliente", "nombre email");
-//     res.json(turnos);
-//   } catch (error) {
-//     res.status(500).json({ message: "Error al obtener turnos", error });
-//   }
-// });
-// Obtener todos los turnos con datos poblados
-router.get("/", authMiddleware, async (req, res) => {
-  try {
-    const turnos = await Turno.find()
-      .populate("mascota", "nombre especie")
-      .populate("cliente", "nombre email");
-    res.json(turnos);
-  } catch (error) {
-    res.status(500).json({ message: "Error al obtener turnos", error });
-  }
-});
-
-
-// router.post("/", authMiddleware, async (req, res) => {
-//   const { mascota, cliente, fecha, notas } = req.body;
-
-//   if (!mascota || !cliente || !fecha) {
-//     return res.status(400).json({ message: "Faltan datos obligatorios." });
-//   }
-
-//   try {
-//     const nuevoTurno = new Turno({ mascota, cliente, fecha, notas });
-//     await nuevoTurno.save();
-//     res.status(201).json(nuevoTurno);
-//   } catch (error) {
-//     res.status(400).json({ message: "Error al crear turno", error });
-//   }
-// });
-// Crear un nuevo turno
+// Crear un turno
 router.post("/", authMiddleware, async (req, res) => {
   const { mascota, cliente, fecha, notas } = req.body;
 
-  if (!mascota || !cliente || !fecha) {
-    return res.status(400).json({ message: "Faltan datos obligatorios." });
-  }
-
   try {
-    const nuevoTurno = new Turno({ 
-      mascota, 
-      cliente, 
-      fecha, 
-      notas 
-    });
-
+    const nuevoTurno = new Turno({ mascota, cliente, fecha, notas });
     await nuevoTurno.save();
-    const turnoPoblado = await nuevoTurno.populate("mascota", "nombre").populate("cliente", "nombre");
-
-    res.status(201).json(turnoPoblado);
+    res.status(201).json(nuevoTurno);
   } catch (error) {
-    res.status(500).json({ message: "Error al crear turno", error });
+    res.status(500).json({ message: error.message });
   }
 });
 
-// Actualizar un turno
-router.put("/:id", authMiddleware, async (req, res) => {
-  const { mascota, cliente, fecha, notas } = req.body;
-
+// Obtener todos los turnos
+router.get("/", authMiddleware, async (req, res) => {
   try {
-    const turnoActualizado = await Turno.findByIdAndUpdate(
-      req.params.id,
-      { mascota, cliente, fecha, notas },
-      { new: true }
-    );
-    res.json(turnoActualizado);
+    const turnos = await Turno.find()
+      .populate("mascota", "nombre")
+      .populate("cliente", "nombre");
+    res.json(turnos);
   } catch (error) {
-    res.status(400).json({ message: "Error al actualizar turno", error });
+    res.status(500).json({ message: error.message });
   }
 });
 
 // Eliminar un turno
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
-    await Turno.findByIdAndDelete(req.params.id);
+    const { id } = req.params;
+    await Turno.findByIdAndDelete(id);
     res.json({ message: "Turno eliminado correctamente" });
   } catch (error) {
-    res.status(500).json({ message: "Error al eliminar turno", error });
+    res.status(500).json({ message: error.message });
   }
 });
 
